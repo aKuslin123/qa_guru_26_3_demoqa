@@ -25,24 +25,24 @@ public class PracticeFormTest {
         $("#firstName").setValue("Alexey");
         $("#lastName").setValue("Kuslin");
         $("#userEmail").setValue("Alexey@mail.ru");
-        $(byText("Male")).click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("0123456789");
 
         //Date of Birth
         $("#dateOfBirthInput").click();
-        $(byXpath("//select[contains(@class, 'month-select')]")).selectOptionByValue("1");
-        $(byXpath("//select[contains(@class, 'year-select')]")).selectOptionByValue("2000");
-        $(byText("12")).click();
+        $(".react-datepicker__month-select").selectOptionByValue("1");
+        $(".react-datepicker__year-select").selectOptionByValue("2000");
+        $(".react-datepicker").$(byText("12")).click();
 
         //Subjects
         $("#subjectsContainer").click();
         actions().sendKeys("M").perform();
-        $(byText("Maths")).click();
+        $(".subjects-auto-complete__menu-list").$(byText("Maths")).click();
 
         //Hobbies
-        $(byText("Sports")).click();
-        $(byText("Reading")).click();
-        $(byText("Music")).click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
 
         //Picture
         $("#uploadPicture").uploadFromClasspath("img.jpg");

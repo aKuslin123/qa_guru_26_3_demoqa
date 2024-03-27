@@ -22,6 +22,10 @@ public class PracticeFormTest {
     void fillFormTest() {
         open("/automation-practice-form");
 
+        //убирает рекламу и банеры, чтобы не мешались
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
         $("#firstName").setValue("Alexey");
         $("#lastName").setValue("Kuslin");
         $("#userEmail").setValue("Alexey@mail.ru");
